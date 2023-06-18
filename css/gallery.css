@@ -169,7 +169,8 @@
 #AdobePs05-pu-button:checked+#AdobePs05-pu,
 #AdobePs06-pu-button:checked+#AdobePs06-pu,
 #AdobePs07-pu-button:checked+#AdobePs07-pu,
-#AdobePs08-pu-button:checked+#AdobePs08-pu {
+#AdobePs08-pu-button:checked+#AdobePs08-pu,
+#AdobePs09-pu-button:checked+#AdobePs09-pu {
   display: block;
 }
 
