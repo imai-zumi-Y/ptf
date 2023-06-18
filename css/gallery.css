@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+#link-gallery {
+  font-size: 180%;
+}
+
+.gallery {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.adobe-title.illustrator {
+  margin-top: 15px;
+}
+
+.adobe-title.photoshop {
+  margin-top: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, var(--w-grid));
+  grid-auto-rows: var(--w-grid);
+  gap: calc((var(--w-contents) - (3 * var(--w-grid))) /2);
+  margin-top: 10px;
+}
+
+.work {
+  overflow: hidden;
+}
+
+.work label {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.work .thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform var(--transition);
+}
+
+.work .thumbnail:hover {
+  transform: scale(112%);
+}
+
+.work input {
+  display: none;
+}
+
+.work .pu {
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+  display: none;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: 650px;
+  max-height: 95vh;
+  z-index: 20;
+}
+
+.work .pu .pu-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 10px;
+}
+
+.work .pu .pu-content img {
+  object-fit: contain;
+  object-position: center;
+  height: 100%;
+  width: auto;
+}
+
+.work .pu .pu-content img+img {
+  margin-top: 10px;
+}
+
+.work .pu .pu-content iframe {
+  height: 300px;
+}
+
+.work .pu .pu-content .time::before {
+  content: "制作期間: ";
+}
+
+.work .pu .pu-content .text {
+  margin-top: 20px;
+  padding: 0 16px;
+}
+
+.work .pu .pu-content .text p+p {
+  margin-top: 1rem;
+}
+
+.work .pu .pu-content .text .work-title {
+  font-size: 1.3rem;
+}
+
+.work .pu .pu-content .source {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 2.5rem;
+  gap: 10px;
+}
+
+.work .pu .pu-content .source::before {
+  content: "素材";
+  position: absolute;
+  top: -1rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.work .pu .pu-content .source li {
+  display: inline-block;
+  width: calc(50% - 10px);
+}
+
+.work .pu .pu-content .source img {
+  width: 100%;
+}
+
+.work .pu .icon-close {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 54px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+#AdobeAi01-pu-button,
+#AdobeAi02-pu-button,
+#AdobeAi03-pu-button {
+  display: none;
+}
+
+#AdobeAi01-pu-button:checked+#AdobeAi01-pu,
+#AdobeAi02-pu-button:checked+#AdobeAi02-pu,
+#AdobeAi03-pu-button:checked+#AdobeAi03-pu,
+#AdobeAi04-pu-button:checked+#AdobeAi04-pu {
+  display: block;
+}
+
+
+#AdobePs01-pu-button:checked+#AdobePs01-pu,
+#AdobePs02-pu-button:checked+#AdobePs02-pu,
+#AdobePs03-pu-button:checked+#AdobePs03-pu,
+#AdobePs04-pu-button:checked+#AdobePs04-pu,
+#AdobePs05-pu-button:checked+#AdobePs05-pu,
+#AdobePs06-pu-button:checked+#AdobePs06-pu,
+#AdobePs07-pu-button:checked+#AdobePs07-pu,
+#AdobePs08-pu-button:checked+#AdobePs08-pu {
+  display: block;
+}
+
+#Art01-pu-button:checked+#Art01-pu,
+#Art02-pu-button:checked+#Art02-pu,
+#Art03-pu-button:checked+#Art03-pu,
+#Art04-pu-button:checked+#Art04-pu,
+#Art05-pu-button:checked+#Art05-pu,
+#Art06-pu-button:checked+#Art06-pu {
+  display: block;
+}
+
+
+
+#Others01-pu-button:checked+#Others01-pu,
+#Others02-pu-button:checked+#Others02-pu,
+#Others03-pu-button:checked+#Others03-pu {
+  display: block;
+}
