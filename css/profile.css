@@ -2,7 +2,7 @@
 
 
 #link-profile {
-  font-size: 180%;
+  font-size: 1.8rem;
 }
 
 
@@ -98,18 +98,26 @@
 }
 
 .about .larger {
-  font-size: 130%;
   display: block;
   width: 95%;
-  margin-top: 2.2rem;
-  margin-bottom: 0.8rem;
+  height: 6rem;
   position: relative;
   margin-left: auto;
   margin-right: auto;
 }
 
+.about .larger .sp-u600 {
+  display: none;
+}
+
 .about .larger img {
   width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .about .larger svg {
@@ -117,11 +125,12 @@
   fill: var(--maincolor1);
   mix-blend-mode: multiply;
   width: 105%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  opacity: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  opacity: 30%;
 }
 
 .about .credit {
@@ -203,4 +212,71 @@
 .section-title {
   text-align: center;
   font-family: 'Zen Kurenaido', sans-serif;
+}
+
+
+@media (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .profile ul{
+    max-width: 700px;
+    padding: 0 10%;
+  }
+
+  .profile ul .item {
+    width: 40%;
+  }
+
+  .profile ul .content {
+    width: 60%;
+  }
+
+  .profile .profile-img {
+    width: 80%;
+    height: 300px;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .about .larger img {
+    position: absolute;
+    width: 96vw;
+  }
+
+  .about .larger svg {
+    width: 99vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .about .larger .sp-u600 {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  .about .larger {
+    height: 9.5rem;
+    color: var(--maincolor1-v);
+    opacity: 80%;
+  }
+
+  .about .larger img,
+  .about .larger svg {
+    display: none;
+  }
 }

@@ -1,14 +1,16 @@
 @charset "utf-8";
 
 #link-top {
-	font-size: 180%;
+	font-size: 1.8rem;
 }
 
 
 .title {
+	max-width: calc(850px + 5%);
 	margin-top: 28px;
-	margin-left: -50px;
-	z-index: 5;
+	margin-left: auto;
+	margin-right:auto;
+	padding-left: 5%;
 }
 
 .title h1 {
@@ -38,7 +40,7 @@
 	justify-content: space-between;
 	width: 100%;
 	position: relative;
-	padding: 0 20px;
+	padding: 0 40px;
 }
 
 .buttons h2 {
@@ -143,6 +145,14 @@
 	letter-spacing: 0.1em;
 }
 
+.button .text .br{
+	display: block;
+}
+
+.button .text .space {
+	display: none;
+}
+
 .button a {
 	/* ハーフトーン */
 	background-color: rgb(255, 255, 255);
@@ -237,6 +247,10 @@
 	padding: 2px 8px;
 }
 
+.button-profile .text .sp {
+	display: none;
+} 
+
 .gallery {
 	display: flex;
 	flex-direction: column;
@@ -269,7 +283,6 @@
 }
 
 .gallery-buttons .button {
-	/* background: var(--maincolor2); */
 	background: var(--maincolor1-v);
 	border-radius: 10px;
 }
@@ -329,4 +342,142 @@
 
 .gallery-buttons .button-others a {
 	background-image: url(../img/gallery/Others/Kujira_thubmneil.png);
+}
+
+@media (max-width:900px) {
+	#link-top {
+		font-size: 2rem;
+	}
+
+	.title h1 {
+		font-size: 3.5rem;
+	}
+
+	.buttons {
+		flex-direction: column;
+		justify-content: inherit;
+		padding: 0 5%;
+		margin-top: 40px;
+	}
+
+	.button a,
+	.gallery-buttons .button a{
+		width: 100%;
+		height: 240px;
+		opacity: 70%;
+	}
+
+	.button .text .br {
+		display: inline;
+	}
+
+	.button .text .space {
+		display: inline-block;
+		width: 1.5rem;
+	}
+
+	.buttons h2 {
+		position: static;
+		width: 100%;
+		justify-content: center;
+		z-index: 0;
+	}
+
+	.button-profile .text{
+		width: 100%;
+		text-align: center;
+		margin: auto;
+		left: 50%;
+		bottom: 50%;
+		transform: translate(-50%, 50%);
+		-webkit-transform: translate(-50%, 50%);
+		-ms-transform: translate(-50%, 50%);
+		opacity: 85%;
+		font-size: 2.8rem;
+	}
+
+	.button-profile .text .pc {
+		display: none;
+	}
+
+	.button-profile .text .sp {
+		display: inline-block;
+	}
+
+	.profile h2,
+	.profile h2 span{
+		animation-delay: var(--animeDelay1);
+	}
+
+	.button-profile {
+		animation-delay: calc(var(--animeDelay1) + 0.4s);
+		-webkit-animation-delay: calc(var(--animeDelay1) + 0.4s);
+		-moz-animation-delay: calc(var(--animeDelay1) + 0.4s);
+		-ms-animation-delay: calc(var(--animeDelay1)+ 0.4s);
+	}
+
+	.gallery {
+		margin-top: 32px;
+	}
+
+	.gallery h2,
+	.gallery h2 span {
+		animation-delay: calc(var(--animeDelay1) + 0.6s);
+		-webkit-animation-delay: calc(var(--animeDelay1) + 0.6s);
+		-moz-animation-delay: calc(var(--animeDelay1) + 0.6s);
+		-ms-animation-delay: calc(var(--animeDelay1) + 0.6s);
+	}
+
+	.gallery-buttons {
+		gap: 16px;
+		width: 100%;
+	}
+
+	.gallery-buttons .button-design {
+		animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.4s);
+		-webkit-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.4s);
+		-moz-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.4s);
+		-ms-animation-delay: calc(calc(var(--animeDelay1) + 0.6s)+ 0.4s);
+	}
+	
+	.gallery-buttons .button-art {
+		animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+		-webkit-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+		-moz-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+		-ms-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+	}
+
+	.gallery-buttons .button-others {
+		animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+		-webkit-animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+		-moz-animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+		-ms-animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+	}
+
+	.gallery-buttons .button .text {
+		opacity: 85%;
+		width: 100%;
+		text-align: center;
+		font-size: 2.8rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.title h1 {
+		font-size: 3rem;
+	}	
+
+	.buttons h2 {
+		font-size: 2.4rem;
+	}
+
+	.button-profile .text{
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.title h1 {
+		font-size: 2.4rem;
+	}	
 }
