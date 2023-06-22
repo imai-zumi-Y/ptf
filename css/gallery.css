@@ -67,7 +67,7 @@
   max-height: 95vh;
   z-index: 20;
   background: #fff;
-  padding: 0.5%;
+  padding: 6px;
 }
 
 .work .pu .pu-content {
@@ -116,6 +116,7 @@
   justify-content: space-between;
   position: relative;
   margin-top: 3rem;
+  padding: 0 4%;
   gap: 10px;
 }
 
@@ -153,6 +154,7 @@
   font-size: 54px;
   color: rgb(255, 255, 255);
   cursor: pointer;
+  background: transparent;
 }
 
 #AdobeAi01-pu-button,
@@ -205,8 +207,8 @@
   }
 
   .work .pu {
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 95vh;
   }
 
   .work .pu .icon-close {

@@ -290,10 +290,9 @@ body {
     max-width: var(--w-contents-sp);
 	}
 
-  /* .header .header-menu ul li{
-    animation: none;
-    opacity: 1;
-	} */
+  .header .header-menu ul li::after{
+    display: none;
+	}
 
   .wrapper {
     max-width: 750px;
@@ -308,7 +307,6 @@ body {
 		padding-left: 0%;
 		animation-delay: 0s;
 	}
-
   
   .title h1{
     font-size: 3rem;
