@@ -109,7 +109,7 @@ li {
   background-color: #fff;
   width: 100%;
   height: 100%;
-  z-index: 50;
+  z-index: 30;
   animation: switchSlide 1.2s forwards;
   transform-origin: right;
 }
@@ -263,7 +263,8 @@ body {
     opacity: 75%;
     animation: slideInY var(--transition-slow) forwards;
     animation-delay: var(--animeDelay0);
-    transform: translateY(-200%)
+    transform: translateY(-200%);
+    z-index: 30;
 	}
 
   @keyframes slideInY {
