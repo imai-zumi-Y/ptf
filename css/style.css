@@ -1,0 +1,492 @@
+@charset "utf-8";
+
+#link-top {
+	font-size: 1.8rem;
+}
+
+
+.title {
+	max-width: calc(850px + 5%);
+	margin-top: 28px;
+	margin-left: auto;
+	margin-right:auto;
+	padding-left: 5%;
+}
+
+.title h1 {
+	font-size: 4.4em;
+}
+
+/* アニメーション */
+.title p {
+	font-size: 1.2rem;
+	margin-top: 0.2rem;
+	letter-spacing: 0.1em;
+	/* アニメーション */
+	overflow: hidden;
+	display: flex;
+}
+
+.title p span {
+	animation: wipeChara 0.5s forwards;
+	animation-delay: calc(var(--animeDelay0) + 0.5s);
+	transform: translateY(100%);
+}
+/* アニメーションここまで */
+
+.buttons {
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: relative;
+	padding: 0 40px;
+}
+
+.buttons h2 {
+	font-family: 'Nothing You Could Do', cursive;
+	font-size: 4.5rem;
+	letter-spacing: 0.08em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 5;
+	opacity: 70%;
+	transform: rotate(-3deg);
+	pointer-events: none;
+	/* アニメーション */
+	overflow: hidden;
+	width: fit-content;
+	height: fit-content;
+	padding: 3%;
+	animation: wipeBox 0.8s backwards;
+	animation-delay: var(--animeDelay2);
+	-webkit-animation-delay: var(--animeDelay2);
+	-moz-animation-delay: var(--animeDelay2);
+	-ms-animation-delay: var(--animeDelay2);
+}
+
+.buttons h2 span {
+	animation: wipeContent 0.8s backwards;
+	animation-delay: var(--animeDelay2);
+	-webkit-animation-delay: var(--animeDelay2);
+	-moz-animation-delay: var(--animeDelay2);
+	-ms-animation-delay: var(--animeDelay2);
+}
+
+@keyframes wipeBox {
+	0% {
+		transform: translateX(-200%);
+		animation-timing-function: ease-out;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 70%;
+	}
+
+	100% {
+		transform: translateX(0%);
+		opacity: 70%;
+	}
+}
+
+@keyframes wipeContent {
+	0% {
+		transform: translateX(200%) rotate(-3deg);
+		animation-timing-function: ease-out;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 70%;
+	}
+
+	100% {
+		transform: translateX(0%) rotate(-3deg);
+	}
+}
+
+/* アニメーションここまで */
+
+.button {
+	position: relative;
+	/* アニメーション */
+	transform: scale(0%);
+	animation: popUp 0.7s forwards;
+}
+
+@keyframes popUp {
+	0% {
+		transform: scale(0%);
+		animation-timing-function: ease;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(100%);
+	}
+}
+
+/* アニメーションここまで */
+
+.button .text {
+	position: absolute;
+	color: rgba(255, 255, 255);
+	display: inline-block;
+	z-index: 10;
+	mix-blend-mode: screen;
+	pointer-events: none;
+	letter-spacing: 0.1em;
+}
+
+.button .text .br{
+	display: block;
+}
+
+.button .text .space {
+	display: none;
+}
+
+.button a {
+	/* ハーフトーン */
+	background-color: rgb(255, 255, 255);
+	background-blend-mode: multiply;
+	background-size: cover;
+	background-position: center;
+	display: block;
+	border-radius: 10px;
+	position: relative;
+	filter: saturate(8%) brightness(90%) contrast(140%);
+	transition: opacity var(--transition);
+	overflow: hidden;
+}
+
+/* ブラー */
+.button a::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: inherit;
+	border-radius: 10px;
+	transition: filter var(--transition-fast) ease-in;
+	filter: blur(0px);
+}
+
+.button:hover.button a::before {
+	filter: blur(4px);
+}
+
+/* ハーフトーン */
+.button a::after {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: radial-gradient(#000 10%, transparent 90%);
+	background-color: #a5a5a580;
+	background-position: 0 0;
+	background-size: 4px 4px;
+	mix-blend-mode: screen;
+	border-radius: 10px;
+}
+
+.button a:hover {
+	opacity: 40%;
+}
+
+.profile {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile h2 {
+	color: var(--maincolor2);
+	top: -10%;
+	left: -6%;
+}
+
+.button-profile {
+	background: var(--maincolor2-v);
+	border-radius: 10px;
+}
+
+.button-profile a {
+	width: 340px;
+	height: 350px;
+	background-image: url(../img/index/charlesdeluvio-pOUA8Xay514-unsplash.jpg);
+	z-index: 0;
+}
+
+.button-profile a:hover+.text {
+	display: inline-block;
+	left: 50%;
+	opacity: 95%;
+}
+
+.button-profile .text {
+	overflow-wrap: break-word;
+	width: 100%;
+	bottom: 0;
+	left: -50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	letter-spacing: 0.1em;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	opacity: 0;
+	transition: opacity var(--transition-fast) ease-in, left var(--transition-fast) ease-out;
+	padding: 2px 8px;
+}
+
+.button-profile .text .sp {
+	display: none;
+} 
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.gallery h2 {
+	color: var(--maincolor1);
+	bottom: -18%;
+	right: -18%;
+	animation-delay: calc(var(--animeDelay2) + 0.6s);
+	-webkit-animation-delay: calc(var(--animeDelay2) + 0.6s);
+	-moz-animation-delay: calc(var(--animeDelay2) + 0.6s);
+	-ms-animation-delay: calc(var(--animeDelay2)+ 0.6s);
+}
+
+.gallery h2 span {
+	animation-delay: calc(var(--animeDelay2) + 0.6s);
+	-webkit-animation-delay: calc(var(--animeDelay2) + 0.6s);
+	-moz-animation-delay: calc(var(--animeDelay2) + 0.6s);
+	-ms-animation-delay: calc(var(--animeDelay2)+ 0.6s);
+}
+
+.gallery-buttons {
+	width: 340px;
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.gallery-buttons .button {
+	background: var(--maincolor1-v);
+	border-radius: 10px;
+}
+
+.gallery-buttons .button a {
+	height: 110px;
+	flex-shrink: 0;
+}
+
+.gallery-buttons .button .text {
+	font-size: 2.2rem;
+	line-height: 0.9;
+	opacity: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	z-index: 10;
+	transition: opacity var(--transition);
+}
+
+.gallery-buttons .button:hover .text {
+	opacity: 95%;
+}
+
+.gallery-buttons .button-design {
+	animation-delay: var(--animeDelay1);
+	-webkit-animation-delay: var(--animeDelay1);
+	-moz-animation-delay: var(--animeDelay1);
+	-ms-animation-delay: var(--animeDelay1);
+}
+
+.gallery-buttons .button-design a {
+	background-image: url(../img/gallery/Adobe_Design/PS/64水彩風2_ptf.png);
+}
+
+.gallery-buttons .button-art {
+	animation-delay: calc(var(--animeDelay1) + 0.2s);
+	-webkit-animation-delay: calc(var(--animeDelay1) + 0.2s);
+	-moz-animation-delay: calc(var(--animeDelay1) + 0.2s);
+	-ms-animation-delay: calc(var(--animeDelay1)+ 0.2s);
+}
+
+
+.gallery-buttons .button-art a {
+	background-image: url(../img/gallery/Art/水彩F6.png);
+	/* background-size: 150%; */
+}
+
+.gallery-buttons .button-others {
+	animation-delay: calc(var(--animeDelay1) + 0.4s);
+	-webkit-animation-delay: calc(var(--animeDelay1) + 0.4s);
+	-moz-animation-delay: calc(var(--animeDelay1) + 0.4s);
+	-ms-animation-delay: calc(var(--animeDelay1) + 0.4s);
+}
+
+.gallery-buttons .button-others a {
+	background-image: url(../img/gallery/Others/Kujira_thubmneil.png);
+}
+
+@media (max-width:900px) {
+	#link-top {
+		font-size: 2rem;
+	}
+
+	.title h1 {
+		font-size: 3.5rem;
+	}
+
+	.buttons {
+		flex-direction: column;
+		justify-content: inherit;
+		padding: 0 5%;
+		margin-top: 40px;
+	}
+
+	.button a,
+	.gallery-buttons .button a{
+		width: 100%;
+		opacity: 70%;
+	}
+
+	.button .text .br {
+		display: inline;
+	}
+
+	.button .text .space {
+		display: inline-block;
+		width: 1.5rem;
+	}
+
+	.buttons h2 {
+		position: static;
+		width: 100%;
+		justify-content: center;
+		z-index: 0;
+	}
+
+	.button-profile a {
+		height: 240px;
+	}
+
+	.button-profile .text{
+		width: 100%;
+		text-align: center;
+		margin: auto;
+		left: 50%;
+		bottom: 50%;
+		transform: translate(-50%, 50%);
+		-webkit-transform: translate(-50%, 50%);
+		-ms-transform: translate(-50%, 50%);
+		opacity: 85%;
+		font-size: 2.8rem;
+	}
+
+	.button-profile .text .pc {
+		display: none;
+	}
+
+	.button-profile .text .sp {
+		display: inline-block;
+	}
+
+	.profile h2,
+	.profile h2 span{
+		animation-delay: var(--animeDelay1);
+	}
+
+	.button-profile {
+		animation-delay: calc(var(--animeDelay1) + 0.4s);
+		-webkit-animation-delay: calc(var(--animeDelay1) + 0.4s);
+		-moz-animation-delay: calc(var(--animeDelay1) + 0.4s);
+		-ms-animation-delay: calc(var(--animeDelay1)+ 0.4s);
+	}
+
+	.gallery {
+		margin-top: 32px;
+	}
+
+	.gallery h2,
+	.gallery h2 span {
+		animation-delay: calc(var(--animeDelay1) + 0.6s);
+		-webkit-animation-delay: calc(var(--animeDelay1) + 0.6s);
+		-moz-animation-delay: calc(var(--animeDelay1) + 0.6s);
+		-ms-animation-delay: calc(var(--animeDelay1) + 0.6s);
+	}
+
+	.gallery-buttons {
+		gap: 16px;
+		width: 100%;
+		height: fit-content;
+	}
+
+	.gallery-buttons .button a{
+		height: 180px;
+	}
+
+	.gallery-buttons .button-design {
+		animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.4s);
+		-webkit-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.4s);
+		-moz-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.4s);
+		-ms-animation-delay: calc(calc(var(--animeDelay1) + 0.6s)+ 0.4s);
+	}
+	
+	.gallery-buttons .button-art {
+		animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+		-webkit-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+		-moz-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+		-ms-animation-delay: calc(calc(var(--animeDelay1) + 0.6s) + 0.6s);
+	}
+
+	.gallery-buttons .button-others {
+		animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+		-webkit-animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+		-moz-animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+		-ms-animation-delay: calc(calc(var(--animeDelay) + 0.6s) + 0.8s);
+	}
+
+	.gallery-buttons .button .text {
+		opacity: 85%;
+		width: 100%;
+		text-align: center;
+		font-size: 2.8rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.title h1 {
+		font-size: 3rem;
+	}	
+
+	.buttons h2 {
+		font-size: 2.4rem;
+	}
+
+	.button-profile .text,
+	.gallery-buttons .text{
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.title h1 {
+		font-size: 2.4rem;
+	}	
+}
